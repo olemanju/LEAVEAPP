@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Page Object test example" duration-ms="18448" started-at="2016-05-13T05:11:18Z" finished-at="2016-05-13T05:11:36Z">
+    <groups>
+    </groups>
+    <test name="Regression 1" duration-ms="18448" started-at="2016-05-13T05:11:18Z" finished-at="2016-05-13T05:11:36Z">
+      <class name="com.hs.tests.LoginTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.hs.tests.LoginTest@35851384]" name="setup" is-config="true" duration-ms="7827" started-at="2016-05-13T10:41:18Z" finished-at="2016-05-13T10:41:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="clickonSubmitButton()[pri:0, instance:com.hs.tests.LoginTest@35851384]" name="clickonSubmitButton" duration-ms="10180" started-at="2016-05-13T10:41:25Z" finished-at="2016-05-13T10:41:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickonSubmitButton -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.hs.tests.LoginTest@35851384]" name="tearDown" is-config="true" duration-ms="433" started-at="2016-05-13T10:41:36Z" finished-at="2016-05-13T10:41:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.hs.tests.LoginTest -->
+    </test> <!-- Regression 1 -->
+  </suite> <!-- Page Object test example -->
+</testng-results>
