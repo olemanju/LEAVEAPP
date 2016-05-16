@@ -26,25 +26,22 @@ public void clickonSubmitButton() throws Exception
 		
 		
 		objloginpage= new LoginPage(uiDriver);
-		
 		objloginpage.verifyUsername();
-		//objloginpage.enterUsername("1104020");
 		String userName=getExcelHRMSLogin(1, 1);
 		objloginpage.enterUsername(userName);
-		
 		objloginpage.verifyPassword();
-		
 		String password=getExcelHRMSLogin(1, 2);
-		System.out.println(password);
 		objloginpage.enterPassword(password);
-		//objloginpage.enterPassword("xqji9221XQ");
-		
-		
 		objwebformpage=objloginpage.clickonSubmitButton();
 		objwebformpage.getUsername();
-		Thread.sleep(8000);
-		
-		
+		objwebformpage.isbirthdaysTextdisplayed();
+		objwebformpage.getNumberofBirthdays();
+		objwebformpage.isNewJoinersTextdisplayed();
+		objwebformpage.getNumberofNewJoiners();
+		objwebformpage.isServiceAnniversaryTextdisplayed();
+		objwebformpage.getServiceAnniversary();
+		Thread.sleep(5000);
+		objwebformpage.clickOnLogoutButton();
 	} 
 	
 	catch (Exception e) 
@@ -53,7 +50,7 @@ public void clickonSubmitButton() throws Exception
 		throw new Exception("FAILED VERIFYING the LoginPage   TESTCASE" + "\n clickonSubmitButton" +e.getLocalizedMessage());
 	}
 	}
-
+@Test
 public String getExcelHRMSLogin(int row, int column) throws Exception
 {
 
