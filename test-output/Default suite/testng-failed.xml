@@ -5,6 +5,7 @@
     <classes>
       <class name="com.hs.tests.LoginTest">
         <methods>
+          <include name="tearDown"/>
           <include name="setup"/>
           <include name="clickonSubmitButton"/>
         </methods>

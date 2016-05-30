@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Page Object test example" duration-ms="29197" started-at="2016-05-16T09:19:54Z" finished-at="2016-05-16T09:20:24Z">
+  <suite name="Page Object test example" duration-ms="25743" started-at="2016-05-25T09:54:12Z" finished-at="2016-05-25T09:54:38Z">
     <groups>
     </groups>
-    <test name="Regression 1" duration-ms="29197" started-at="2016-05-16T09:19:54Z" finished-at="2016-05-16T09:20:24Z">
+    <test name="Regression 1" duration-ms="25743" started-at="2016-05-25T09:54:12Z" finished-at="2016-05-25T09:54:38Z">
       <class name="com.hs.tests.LoginTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.hs.tests.LoginTest@35851384]" name="setup" is-config="true" duration-ms="18934" started-at="2016-05-16T14:49:54Z" finished-at="2016-05-16T14:50:13Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.hs.tests.LoginTest@35851384]" name="setup" is-config="true" duration-ms="8692" started-at="2016-05-25T15:24:12Z" finished-at="2016-05-25T15:24:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="clickonSubmitButton()[pri:0, instance:com.hs.tests.LoginTest@35851384]" name="clickonSubmitButton" duration-ms="9840" started-at="2016-05-16T14:50:13Z" finished-at="2016-05-16T14:50:23Z">
+        <test-method status="PASS" signature="clickonSubmitButton()[pri:0, instance:com.hs.tests.LoginTest@35851384]" name="clickonSubmitButton" duration-ms="6647" started-at="2016-05-25T15:24:21Z" finished-at="2016-05-25T15:24:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickonSubmitButton -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.hs.tests.LoginTest@35851384]" name="tearDown" is-config="true" duration-ms="415" started-at="2016-05-16T14:50:23Z" finished-at="2016-05-16T14:50:24Z">
+        <test-method status="PASS" signature="MyRequestStatusDetails()[pri:0, instance:com.hs.tests.LoginTest@35851384]" name="MyRequestStatusDetails" duration-ms="5031" started-at="2016-05-25T15:24:28Z" finished-at="2016-05-25T15:24:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MyRequestStatusDetails -->
+        <test-method status="PASS" signature="getCelebrationsdetails()[pri:0, instance:com.hs.tests.LoginTest@35851384]" name="getCelebrationsdetails" duration-ms="4972" started-at="2016-05-25T15:24:33Z" finished-at="2016-05-25T15:24:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getCelebrationsdetails -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.hs.tests.LoginTest@35851384]" name="tearDown" is-config="true" duration-ms="390" started-at="2016-05-25T15:24:38Z" finished-at="2016-05-25T15:24:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
