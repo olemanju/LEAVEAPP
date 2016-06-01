@@ -3,6 +3,11 @@ package com.hs.Utils;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -111,4 +116,30 @@ public  static void setCellData(String Result,  int RowNum, int ColNum) throws E
 		}
 
 	}
+
+public static void writeDataToExcel(String sheetName,int row,int column,String value,String path) throws Exception
+{
+	
+	FileOutputStream fileOut = new FileOutputStream(path);
+	
+	HSSFWorkbook workbook = new HSSFWorkbook();
+	
+	HSSFSheet worksheet = workbook.createSheet(sheetName);
+	
+	// index from 0,0... cell A1 is cell(0,0)
+	HSSFRow row1 = worksheet.createRow((short)row);
+	
+	
+	HSSFCell cellA1 = row1.createCell((short) column);
+	
+	cellA1.setCellValue(value);
+	workbook.write(fileOut);
+	fileOut.flush();
+	fileOut.close();
+	
+	
+}
+
+
+
 }

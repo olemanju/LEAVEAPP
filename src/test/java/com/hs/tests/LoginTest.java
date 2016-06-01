@@ -18,7 +18,7 @@ public class LoginTest extends BaseTestObject
 LoginPage objloginpage;
 Webform2Page objwebformpage; 
 
-@Test(priority=1)
+@Test(priority=1,enabled=false)
 public void clickonSubmitButton() throws Exception
 {
 	try 
@@ -50,7 +50,7 @@ public void clickonSubmitButton() throws Exception
 	}
 	}
 
-@Test(priority=2)
+@Test(priority=2,enabled=false)
 public void MyRequestStatusDetails() throws Exception
 {
 	try {
@@ -79,7 +79,7 @@ public void MyRequestStatusDetails() throws Exception
 		throw new Exception("Failed Test case of My request Status " + e.getMessage());
 	}
 	}
-@Test(priority=3)
+@Test(priority=3, enabled=false)
 public void getCelebrationsdetails() throws Exception
 {
 try
@@ -106,6 +106,68 @@ try
 catch (Exception e) 
 {
 	throw new Exception("Failed the test case of Celebrations and announcements" + e.getMessage());
+}	
+}
+
+
+@Test(priority=4, enabled=false)
+public void getHolidaysDetails() throws Exception
+{
+try
+{
+	objloginpage= new LoginPage(uiDriver);
+	objloginpage.verifyUsername();
+	String username=getExcelHRMSLogin(1, 1);
+	objloginpage.enterUsername(username);
+	objloginpage.verifyPassword();
+	String password=getExcelHRMSLogin(1, 2);
+	objloginpage.enterPassword(password);
+	objwebformpage=objloginpage.clickonSubmitButton();
+	objwebformpage.verifyHolidaylistlink();
+	objwebformpage.clickonHolidayslink();
+	objwebformpage.verifyHolidayPageHeader();
+	objwebformpage.getHolidaysNames();
+	objwebformpage.getHolidaysDays();
+	objwebformpage.getHolidaysDate();
+	objwebformpage.holidaywindowcloseicondisplayed();
+	objwebformpage.clickonHolidaywindowclose();
+		Thread.sleep(4000);
+	objwebformpage.clickOnLogoutButton();
+	
+} 
+catch (Exception e) 
+{
+	throw new Exception("Failed the test case of Celebrations and announcements" + e.getMessage());
+}	
+}
+
+
+@Test(priority=5, enabled=true)
+public void EmployerDetails() throws Exception
+{
+try
+{
+	objloginpage= new LoginPage(uiDriver);
+	objloginpage.verifyUsername();
+	String username=getExcelHRMSLogin(1, 1);
+	objloginpage.enterUsername(username);
+	objloginpage.verifyPassword();
+	String password=getExcelHRMSLogin(1, 2);
+	objloginpage.enterPassword(password);
+	objwebformpage=objloginpage.clickonSubmitButton();
+	objwebformpage.EnterEmpNumber("1512");
+	Thread.sleep(2000);
+	objwebformpage.clickOnSearchbutton();
+	Thread.sleep(2000);
+	objwebformpage.getEmployerDetails();
+	objwebformpage.clickOnCloseEmployerbutton();
+	Thread.sleep(4000);
+	objwebformpage.clickOnLogoutButton();
+	
+} 
+catch (Exception e) 
+{
+	throw new Exception("Failed the test case of Employer" + e.getMessage());
 }	
 }
 @Test

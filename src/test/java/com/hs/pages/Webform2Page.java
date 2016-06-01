@@ -1,12 +1,18 @@
 package com.hs.pages;
 
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import com.hs.Utils.BasePageObject;
+import com.hs.Utils.ExcelutilObject;
+import com.hs.common.HSConstants;
 
 
 
@@ -52,13 +58,25 @@ By NewJoinersCount=By.xpath("//tr[td/span[@id='ctl00_cphMain_lbl_lbl7']]/td/a[@t
 By ServiceAnnviresary=By.id("ctl00_cphMain_lbl_lbl9");
 By ServiceAnnviresarycount=By.xpath("//tr[td/span[@id='ctl00_cphMain_lbl_lbl9']]/td/a[@title='Click To View']");
 
+//HolidaysList
 
+By HolidayList=By.partialLinkText("Holiday List");
+By HolidayListHeader=By.id("ctl00_lbl_HolidayLists");
+By holidaysName=By.xpath("//table[@id='ctl00_gv_HolidayLists']/tbody/tr/td[2]");
+By holidaysDays=By.xpath("//table[@id='ctl00_gv_HolidayLists']/tbody/tr/td[4]");
+By holidaysDate=By.xpath("//table[@id='ctl00_gv_HolidayLists']/tbody/tr/td[3]");
+By holidaysListwindowClose=By.id("ctl00_ImageButton1");
 
+//Search Code
+By Searchtext=By.id("ctl00_txt_EmpCode");
+By SearchButton=By.id("ctl00_ibtn_Search");
+By EmpSearchClosebtton=By.id("ctl00_ibtn_EmpClose");
+By EmployeeListHead=By.id("ctl00_lbl_EmpList");
+By EmployerList=By.xpath("//table[@id='ctl00_gv_EmployeeDetails']/tbody/tr[position()>1 and position()<last()]");
+By Employer_page1=By.xpath("//table[@id='ctl00_gv_EmployeeDetails']/tbody/tr[@class='gridviewPagerNormal']/td/table/tbody/tr/td/span");
+By Employer_page2=By.xpath("//table[@id='ctl00_gv_EmployeeDetails']/tbody/tr[@class='gridviewPagerNormal']/td/table/tbody/tr/td[2]/a");
 
-
-
-
-
+By EmployerPagination=By.xpath("//tr[@class='gridviewPagerNormal']/td/table/tbody/tr/td");
 
 public void getUsername() throws Exception
 {
@@ -308,6 +326,237 @@ try
 
 }
 
+
+public boolean verifyHolidaylistlink() throws Exception
+{
+try 
+{
+	flag=isElementPresent(HolidayList);
+	Assert.assertTrue(flag,"Holidays  Element is not found on the Page");
+	return flag;
+} catch (Exception e) 
+{
+	throw new Exception("Failed while Verifying the Holidays Link  " + e.getLocalizedMessage());
+}	
+}
+
+
+public Webform2Page clickonHolidayslink() throws Exception
+{
+		
+	try {
+		uiDriver.findElement(HolidayList).click();
+		
+	} catch (Exception e) {
+	throw new Exception("Failed while Clicking on the Holidays Link");
+	}
+	
+	return new Webform2Page(uiDriver);
+}
+
+
+public boolean verifyHolidayPageHeader() throws Exception
+{
+try 
+{
+	flag=isElementPresent(HolidayListHeader);
+	Assert.assertTrue(flag,"Holidays  List Header Element is not found on the Page");
+	return flag;
+} catch (Exception e) 
+{
+	throw new Exception("Failed while Verifying the Holidays Header  " + e.getLocalizedMessage());
+}	
+}
+
+public List<String>  getHolidaysNames() throws Exception
+{
+	
+try {
+	List<WebElement> allholidaysnames= uiDriver.findElements(holidaysName);
+	
+	List<String> HolidaysNam= new ArrayList<String>();
+	
+	for (WebElement str : allholidaysnames)
+	{
+		HolidaysNam.add(str.getText());
+		System.out.println(str.getText());
+	}
+	
+	return HolidaysNam;
+	
+} 
+catch (Exception e) {
+	throw new Exception("Failed while getting the Holidays Names from the List: " + e.getMessage());
+}
+}
+
+public List<String> getHolidaysDays() throws Exception
+{
+try {
+	List<WebElement> Hol_Days= uiDriver.findElements(holidaysDays);
+	
+	List<String> Hdays= new ArrayList<String>();
+	
+	for (WebElement HdaysList : Hol_Days) 
+	{
+		Hdays.add(HdaysList.getText());
+		System.out.println(HdaysList.getText());
+	}
+	
+	return Hdays;
+	
+} catch (Exception e) 
+{
+	throw new Exception("Failed while getting the Holidays Days List" + e.getMessage());
+}	
+}
+
+public List<String> getHolidaysDate() throws Exception
+{
+	try {
+		List<WebElement> H_date= uiDriver.findElements(holidaysDate);
+		List<String>Hol_date= new ArrayList<String>();
+		
+		for (WebElement HD : H_date)
+		{
+			Hol_date.add(HD.getText());
+			
+			System.out.println(HD.getText());
+		}
+		
+		return Hol_date;
+	} 
+	
+	catch (Exception e) {
+		throw new Exception("Failed while getting the Date of Holidays  " + e.getMessage() );
+	}
+}
+
+public boolean holidaywindowcloseicondisplayed() throws Exception
+{
+try 
+{
+	flag=isElementPresent(holidaysListwindowClose);
+	Assert.assertTrue(flag,"Holidays List window Close Label is Missing");
+	return flag;
+} 
+catch (Exception e) 
+{
+throw new Exception("Failed while verifying the Holidays window close" + e.getMessage());
+}	
+}
+
+public Webform2Page clickonHolidaywindowclose() throws Exception
+{
+	try 
+	{
+		uiDriver.findElement(holidaysListwindowClose).click();
+	} catch (Exception e) 
+	{
+	throw new Exception("Failed while Clicking on the Holiday window Close button " + e.getMessage());
+	}
+	return new Webform2Page(uiDriver);
+}
+
+public void EnterEmpNumber(String EmployerNumber) throws Exception
+{
+	try 
+	{
+		ArrayList<String> emp= new ArrayList<String>();
+		
+		for(int i=1104; i<=1113; i++)
+		{
+			
+		}
+		uiDriver.findElement(Searchtext).sendKeys(EmployerNumber);
+	} catch (Exception e) 
+	{
+	throw new Exception("Failed while Entering the Employee Number " + e.getMessage());
+	}
+}
+
+
+
+public Webform2Page clickOnSearchbutton() throws Exception
+{
+	try 
+	{
+		uiDriver.findElement(SearchButton).click();
+		
+	} catch (Exception e) 
+	{
+	throw new Exception("Failed while Clicking on the Search button " + e.getMessage());
+	}
+	return new Webform2Page(uiDriver);
+}
+
+public List<String> getEmployerDetails() throws Exception
+{
+try 
+{
+	
+	
+	//List<WebElement> EMp_det= uiDriver.findElements(EmployerList);
+	
+	List<String> emp_d= new ArrayList<String>();
+	
+	List<WebElement> Pagination= uiDriver.findElements(EmployerPagination);
+	
+		
+	if(Pagination.size()>0)
+	{
+		System.out.println("Pagination Exists");
+	
+		
+		for (WebElement abani : Pagination)
+		{
+			abani.click();	
+			List<WebElement> EMp_det2= uiDriver.findElements(EmployerList);
+		for (WebElement Em_1 : EMp_det2) 
+		{
+			emp_d.add(Em_1.getText());
+			System.out.println(Em_1.getText());
+			ExcelutilObject.writeDataToExcel("Nanda", 1, 2, Em_1.getText(), HSConstants.Path_Write_TestData);
+		}
+		}
+	
+	}
+	else { 
+		System.out.println("pagination not exists"); 
+
+	
+					List<WebElement> EMp_det2= uiDriver.findElements(EmployerList);
+		for (WebElement Em_1 : EMp_det2) 
+		{
+			emp_d.add(Em_1.getText());
+			System.out.println(Em_1.getText());
+			ExcelutilObject.writeDataToExcel("Nanda", 1, 2, Em_1.getText(), HSConstants.Path_Write_TestData);
+		}
+		
+	
+	}
+	return emp_d;
+	
+	
+
+} 
+catch (Exception e) {
+	throw new Exception("Failed while getting the Employer details" +e.getLocalizedMessage());
+}	
+}
+
+public Webform2Page clickOnCloseEmployerbutton() throws Exception
+{
+	try 
+	{
+		uiDriver.findElement(EmpSearchClosebtton).click();
+		
+	} catch (Exception e) 
+	{
+	throw new Exception("Failed while Clicking on the Employer Close  button " + e.getMessage());
+	}
+	return new Webform2Page(uiDriver);
+}
 
 }
 

@@ -7,7 +7,7 @@
         <methods>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="clickonSubmitButton"/>
+          <include name="EmployerDetails"/>
         </methods>
       </class> <!-- com.hs.tests.LoginTest -->
     </classes>
